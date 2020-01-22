@@ -9,6 +9,10 @@ $WebHookURL = $Env:teamsURL
 # There are two types of notifications in A2, converge failures and compliance failures
 # This section determines type, then forms a new message based on info from the original request
 $type = $Request.Body.type
+
+#remove after testing
+Write-Output $Request.body 
+
 if ($type -eq 'converge_failure') {
     $text = '<b>Converge Failure</b><BR><BR>
         <b>Node:</b> {0}<BR>
